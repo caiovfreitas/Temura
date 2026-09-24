@@ -1,5 +1,11 @@
 "use client";
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type FormEvent,
+  useLayoutEffect,
+} from "react";
 import {
   ArrowUpRight,
   ArrowDown,
@@ -75,6 +81,9 @@ const questions = [
 ];
 
 export default function Home() {
+  const marqueeWrapRef = useRef<HTMLDivElement>(null);
+  const marqueeTrackRef = useRef<HTMLDivElement>(null);
+  const [marqueeReps, setMarqueeReps] = useState(6); // valor inicial seguro pro primeiro paint
   const root = useRef<HTMLElement>(null);
   const started = useRef(Date.now());
   const key = useRef("");
@@ -115,7 +124,7 @@ export default function Home() {
           },
         });
         gsap.to(".marquee-track", {
-          xPercent: -18,
+          xPercent: -5,
           ease: "none",
           scrollTrigger: {
             trigger: ".marquee",
@@ -124,35 +133,31 @@ export default function Home() {
             scrub: 1,
           },
         });
-        gsap.utils
-          .toArray<HTMLElement>(".reveal")
-          .forEach((el) =>
-            gsap.from(el, {
-              y: 38,
-              opacity: 0,
-              duration: 0.9,
-              ease: "power2.out",
-              scrollTrigger: { trigger: el, start: "top 93%", once: true },
-            }),
-          );
-        gsap.utils
-          .toArray<HTMLElement>(".service-art")
-          .forEach((el) =>
-            gsap.fromTo(
-              el,
-              { yPercent: -8 },
-              {
-                yPercent: 8,
-                ease: "none",
-                scrollTrigger: {
-                  trigger: el.closest(".service-card"),
-                  start: "top bottom",
-                  end: "bottom top",
-                  scrub: 1,
-                },
+        gsap.utils.toArray<HTMLElement>(".reveal").forEach((el) =>
+          gsap.from(el, {
+            y: 38,
+            opacity: 0,
+            duration: 0.9,
+            ease: "power2.out",
+            scrollTrigger: { trigger: el, start: "top 93%", once: true },
+          }),
+        );
+        gsap.utils.toArray<HTMLElement>(".service-art").forEach((el) =>
+          gsap.fromTo(
+            el,
+            { yPercent: -8 },
+            {
+              yPercent: 8,
+              ease: "none",
+              scrollTrigger: {
+                trigger: el.closest(".service-card"),
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1,
               },
-            ),
-          );
+            },
+          ),
+        );
         gsap.to(".statement-word", {
           xPercent: -12,
           ease: "none",
@@ -298,10 +303,19 @@ export default function Home() {
           <span className="hero-index">01 — 05</span>
         </div>
       </section>
-      <div className="marquee" aria-hidden="true">
-        <div className="marquee-track">
-          IDEIAS EM MOVIMENTO <span>✳</span> MARCAS EM EVIDÊNCIA <span>✳</span>{" "}
-          IDEIAS EM MOVIMENTO <span>✳</span> MARCAS EM EVIDÊNCIA <span>✳</span>
+      <div className="marquee" aria-hidden="true" ref={marqueeWrapRef}>
+        <div className="marquee-track" ref={marqueeTrackRef}>
+          {Array.from({ length: marqueeReps }).map((_, i) => (
+            <span
+              className="marquee-unit"
+              key={i}
+              style={{ color: "inherit", fontSize: "inherit", margin: 0 }}
+            >
+              IDEIAS EM MOVIMENTO <span>✳</span>
+              MARCAS EM EVIDÊNCIA{" "} <span>✳</span>{" "}
+              RECONHECIMENTO{" "} <span>✳</span>{" "}
+            </span>
+          ))}
         </div>
       </div>
       <section id="sobre" className="about section-pad">
