@@ -230,6 +230,7 @@ export default function Home() {
       </a>
       <header className="header">
         <a href="#inicio" className="logo" aria-label="Temura — início">
+          <img className="brand-symbol" src="/brand/temura-simbolo-branco.png" alt="" width="382" height="480" />
           temura<span>®</span>
         </a>
         <nav
@@ -328,7 +329,13 @@ export default function Home() {
         </div>
         <div className="about-grid">
           <div className="about-mark" aria-hidden="true">
-            t<span>↗︎</span>
+            <img
+              src="/brand/temura-logo-vermelho.png"
+              alt=""
+              width="640"
+              height="683"
+              loading="lazy"
+            />
           </div>
           <div>
             <h2 className="reveal">
@@ -417,7 +424,10 @@ export default function Home() {
                         <span>PRESENÇA QUE GERA RESULTADO</span>
                       </div>
                       <div className="browser-content">
-                        <span className="mini-brand">temura®</span>
+                        <span className="mini-brand">
+                          <img className="brand-symbol" src="/brand/temura-simbolo-branco.png" alt="" width="382" height="480" />
+                          temura®
+                        </span>
                         <strong>
                           FEITO PARA
                           <br />
@@ -479,26 +489,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="statement" aria-label="Criatividade com direção">
-        <div className="statement-word" aria-hidden="true">
-          CRIATIVIDADE
-        </div>
-        <div className="statement-inner">
-          <span>
-            MAIS DO MESMO?
-            <br />
-            NÃO É COM A GENTE.
-          </span>
-          <h2>
-            Boas ideias precisam
-            <br />
-            levar a algum lugar.
-          </h2>
-          <a href="#contato" aria-label="Conversar sobre meu projeto">
-            <ArrowUpRight strokeWidth={1} />
-          </a>
-        </div>
-      </section>
       <section id="processo" className="process section-pad">
         <div className="section-label">
           <span>03 / COMO FAZEMOS</span>
@@ -536,6 +526,26 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+      <section className="statement" aria-label="Criatividade com direção">
+        <div className="statement-word" aria-hidden="true">
+          CRIATIVIDADE
+        </div>
+        <div className="statement-inner">
+          <span>
+            MAIS DO MESMO?
+            <br />
+            NÃO É COM A GENTE.
+          </span>
+          <h2>
+            Boas ideias precisam
+            <br />
+            levar a algum lugar.
+          </h2>
+          <a href="#contato" aria-label="Conversar sobre meu projeto">
+            <ArrowUpRight strokeWidth={1} />
+          </a>
         </div>
       </section>
       <section className="faq section-pad">
@@ -713,6 +723,7 @@ export default function Home() {
             className="footer-word"
             aria-label="Temura — voltar ao início"
           >
+            <img className="brand-symbol" src="/brand/temura-simbolo-branco.png" alt="" width="382" height="480" />
             temura<span>®</span>
           </a>
           <a href="#inicio" className="back-top" aria-label="Voltar ao início">

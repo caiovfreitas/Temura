@@ -122,6 +122,13 @@ em {
   display: inline-block;
   margin: 8px 0 0 5px;
 }
+.brand-symbol {
+  display: inline-block;
+  height: 0.95em;
+  width: auto;
+  margin-right: 0.2em;
+  vertical-align: -0.17em;
+}
 .nav {
   display: flex;
   align-items: center;
@@ -309,19 +316,12 @@ em {
   gap: 40px;
 }
 .about-mark {
-  font-family: "Manrope", sans-serif;
-  font-size: 195px;
-  line-height: 1;
-  letter-spacing: -20px;
-  color: var(--red);
-  font-weight: 800;
   align-self: center;
 }
-.about-mark span {
-  font-size: 100px;
-  vertical-align: top;
-  line-height: 1.4;
-  letter-spacing: -15px;
+.about-mark img {
+  display: block;
+  width: 240px;
+  height: auto;
 }
 h2 {
   font-size: clamp(40px, 4.3vw, 76px);
@@ -936,9 +936,15 @@ textarea {
 .footer-word {
   font-family: "Manrope", sans-serif;
   font-weight: 750;
-  font-size: clamp(110px, 22vw, 380px);
+  font-size: clamp(90px, 18vw, 320px);
   letter-spacing: -0.08em;
   line-height: 1.25;
+  white-space: nowrap;
+}
+.footer-word .brand-symbol {
+  height: 0.75em;
+  margin-right: 0.12em;
+  vertical-align: -0.1em;
 }
 .footer-word span {
   font-family: Arial;
@@ -1070,11 +1076,8 @@ textarea {
   .about-grid {
     grid-template-columns: 0.6fr 2fr;
   }
-  .about-mark {
-    font-size: 140px;
-  }
-  .about-mark span {
-    font-size: 70px;
+  .about-mark img {
+    width: 170px;
   }
   .process-grid,
   .faq-grid {
@@ -1211,13 +1214,8 @@ textarea {
     grid-template-columns: 1fr;
     gap: 25px;
   }
-  .about-mark {
-    font-size: 75px;
-    letter-spacing: -8px;
-  }
-  .about-mark span {
-    font-size: 40px;
-    letter-spacing: -5px;
+  .about-mark img {
+    width: 100px;
   }
   .about h2 {
     font-size: clamp(33px, 7.6vw, 53px);
@@ -1389,7 +1387,7 @@ textarea {
     padding: 28px 6%;
   }
   .footer-word {
-    font-size: 24vw;
+    font-size: 19vw;
     letter-spacing: -0.085em;
   }
   .back-top {

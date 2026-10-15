@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   description:
     "Sites e landing pages, tráfego pago e produção audiovisual. A Temura conecta estratégia, design e conteúdo para colocar sua marca em movimento.",
   robots: { index: false, follow: false },
+  manifest: "/manifest.webmanifest",
 };
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
