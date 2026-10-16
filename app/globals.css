@@ -108,26 +108,48 @@ em {
   z-index: 20;
   inset: 0 0 auto;
 }
-.logo {
+/* Lockup símbolo + nome "temura".
+   Proporção do estudo de marca: a altura do símbolo (--h) é dividida em 4 partes e
+   a altura-x do nome ocupa as 2 partes centrais (--x: 0.5), centralizada no símbolo.
+   Para mudar o tamanho do logo, altere só a variável --h de cada uso. */
+.lockup {
+  --h: 36px;
+  --x: 0.5;
+  --xh: 0.541;
+  --nudge: -0.102;
+  --gap: 0.27;
+  --tracking: -0.083em;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  height: var(--h);
+  line-height: 1;
+  white-space: nowrap;
   font-family: "Manrope", sans-serif;
-  font-size: 38px;
-  letter-spacing: -2.5px;
   font-weight: 800;
 }
-.logo span {
-  font-family: Arial;
-  font-size: 15px;
-  letter-spacing: 0;
-  vertical-align: top;
-  display: inline-block;
-  margin: 8px 0 0 5px;
-}
-.brand-symbol {
-  display: inline-block;
-  height: 0.95em;
+.lockup .brand-symbol {
+  display: block;
+  height: var(--h);
   width: auto;
-  margin-right: 0.2em;
-  vertical-align: -0.17em;
+  margin-right: calc(var(--h) * var(--gap));
+}
+.lockup .wordmark {
+  font-size: calc(var(--h) * var(--x) / var(--xh));
+  line-height: 1;
+  letter-spacing: var(--tracking);
+  transform: translateY(calc(var(--h) * var(--nudge)));
+}
+.lockup .reg {
+  align-self: flex-start;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  font-size: calc(var(--h) * 0.15);
+  letter-spacing: 0;
+  margin: calc(var(--h) * 0.036) 0 0 calc(var(--h) * 0.02);
+}
+.logo {
+  --h: 36px;
 }
 .nav {
   display: flex;
@@ -492,8 +514,7 @@ h2 {
   overflow: hidden;
 }
 .mini-brand {
-  font-size: 16px;
-  font-weight: 700;
+  --h: 18px;
 }
 .browser-content strong {
   display: block;
@@ -934,25 +955,8 @@ textarea {
   align-items: center;
 }
 .footer-word {
-  font-family: "Manrope", sans-serif;
-  font-weight: 750;
-  font-size: clamp(90px, 18vw, 320px);
-  letter-spacing: -0.08em;
-  line-height: 1.25;
-  white-space: nowrap;
-}
-.footer-word .brand-symbol {
-  height: 0.75em;
-  margin-right: 0.12em;
-  vertical-align: -0.1em;
-}
-.footer-word span {
-  font-family: Arial;
-  font-size: 0.16em;
-  letter-spacing: 0;
-  vertical-align: top;
-  display: inline-block;
-  line-height: 4;
+  --h: calc(clamp(90px, 18vw, 320px) * 0.75);
+  margin-block: calc(var(--h) * 0.2);
 }
 .back-top {
   border: 1px solid #ffffff50;
@@ -1100,7 +1104,7 @@ textarea {
     padding-inline: 6%;
   }
   .logo {
-    font-size: 33px;
+    --h: 31px;
   }
   .menu-toggle {
     display: grid;
@@ -1387,8 +1391,7 @@ textarea {
     padding: 28px 6%;
   }
   .footer-word {
-    font-size: 19vw;
-    letter-spacing: -0.085em;
+    --h: calc(19vw * 0.75);
   }
   .back-top {
     width: 38px;

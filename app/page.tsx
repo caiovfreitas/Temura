@@ -229,9 +229,10 @@ export default function Home() {
         Pular para o conteúdo
       </a>
       <header className="header">
-        <a href="#inicio" className="logo" aria-label="Temura — início">
+        <a href="#inicio" className="logo lockup" aria-label="Temura — início">
           <img className="brand-symbol" src="/brand/temura-simbolo-branco.png" alt="" width="382" height="480" />
-          temura<span>®</span>
+          <span className="wordmark">temura</span>
+          <span className="reg" aria-hidden="true">®</span>
         </a>
         <nav
           aria-label="Navegação principal"
@@ -424,9 +425,10 @@ export default function Home() {
                         <span>PRESENÇA QUE GERA RESULTADO</span>
                       </div>
                       <div className="browser-content">
-                        <span className="mini-brand">
+                        <span className="mini-brand lockup">
                           <img className="brand-symbol" src="/brand/temura-simbolo-branco.png" alt="" width="382" height="480" />
-                          temura®
+                          <span className="wordmark">temura</span>
+                          <span className="reg" aria-hidden="true">®</span>
                         </span>
                         <strong>
                           FEITO PARA
@@ -720,11 +722,12 @@ export default function Home() {
         <div className="footer-top">
           <a
             href="#inicio"
-            className="footer-word"
+            className="footer-word lockup"
             aria-label="Temura — voltar ao início"
           >
             <img className="brand-symbol" src="/brand/temura-simbolo-branco.png" alt="" width="382" height="480" />
-            temura<span>®</span>
+            <span className="wordmark">temura</span>
+            <span className="reg" aria-hidden="true">®</span>
           </a>
           <a href="#inicio" className="back-top" aria-label="Voltar ao início">
             <ArrowUpRight size={32} />
