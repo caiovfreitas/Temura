@@ -116,8 +116,8 @@ em {
   --h: 36px;
   --x: 0.5;
   --xh: 0.541;
-  --nudge: -0.102;
-  --gap: 0.27;
+  --nudge: -0.029;
+  --gap: 0.245;
   --tracking: -0.083em;
   display: inline-flex;
   align-items: center;
@@ -146,7 +146,7 @@ em {
   font-weight: 400;
   font-size: calc(var(--h) * 0.15);
   letter-spacing: 0;
-  margin: calc(var(--h) * 0.036) 0 0 calc(var(--h) * 0.02);
+  margin: calc(var(--h) * 0.115) 0 0 calc(var(--h) * 0.02);
 }
 .logo {
   --h: 36px;
